@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Pieza.gd" type="Script" id=1]
+
+[sub_resource type="CurveTexture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 60.6321, 52.1121 )
+
+[node name="Pieza" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PM" type="Area2D" parent="."]
+
+[node name="Pieza_movil" type="Sprite" parent="PM"]
+position = Vector2( 173.762, 116.064 )
+scale = Vector2( 0.0640975, 110.322 )
+texture = SubResource( 1 )
+
+[node name="Colision" type="CollisionShape2D" parent="PM"]
+position = Vector2( 174.864, 114.796 )
+shape = SubResource( 2 )

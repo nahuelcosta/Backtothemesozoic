@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/GuardarDatos.gd" type="Script" id=1]
+[ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 78
+font_data = ExtResource( 2 )
+
+[node name="GuardarDatos" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="SumarMonedas" type="Button" parent="."]
+margin_left = 388.909
+margin_top = 360.624
+margin_right = 611.909
+margin_bottom = 422.624
+text = "Monedas+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monedas" type="Label" parent="." groups=[
+"Monedas",
+]]
+margin_left = 394.113
+margin_top = 268.095
+margin_right = 612.113
+margin_bottom = 351.095
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="SumarMonedas" to="." method="_on_SumarMonedas_pressed"]

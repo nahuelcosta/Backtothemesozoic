@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Jugador.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Personaje2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Personaje1.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.9729, 49.095 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 57.2498, 104.127 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30.6722, 27.4976 )
+
+[sub_resource type="GradientTexture" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 515.909, 21.6473 )
+
+[node name="Dialogos" type="Node2D"]
+
+[node name="Personaje1" type="Area2D" parent="."]
+position = Vector2( 600, 414 )
+
+[node name="Personaje" type="Sprite" parent="Personaje1"]
+position = Vector2( 66.0745, 87.4319 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 4 )
+
+[node name="Colision" type="CollisionShape2D" parent="Personaje1"]
+position = Vector2( 65.6652, 93.6652 )
+shape = SubResource( 1 )
+
+[node name="Cuadro_Texto" type="Popup" parent="Personaje1"]
+margin_left = -113.0
+margin_top = -35.0
+margin_right = 65.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo_CT" type="ColorRect" parent="Personaje1/Cuadro_Texto"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Personaje1/Cuadro_Texto"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Hola, esta es una prueba C:"
+align = 1
+valign = 1
+
+[node name="Personaje2" type="Area2D" parent="."]
+position = Vector2( 838.665, 414 )
+
+[node name="Personaje" type="Sprite" parent="Personaje2"]
+position = Vector2( 66.0745, 87.4319 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 3 )
+
+[node name="Colision" type="CollisionShape2D" parent="Personaje2"]
+position = Vector2( 65.0745, 97.4319 )
+scale = Vector2( 0.45, 0.45 )
+shape = SubResource( 2 )
+
+[node name="Cuadro_Texto" type="Popup" parent="Personaje2"]
+margin_left = -111.0
+margin_top = -35.0
+margin_right = 67.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo_CT" type="ColorRect" parent="Personaje2/Cuadro_Texto"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Personaje2/Cuadro_Texto"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Hola, sigue siendo una
+ prueba, pero soy el 
+personaje 2 :3"
+align = 1
+valign = 1
+
+[node name="Jugador" type="KinematicBody2D" parent="."]
+position = Vector2( 101, 401 )
+script = ExtResource( 1 )
+
+[node name="Personaje" type="Sprite" parent="Jugador"]
+position = Vector2( 66.0745, 87.432 )
+texture = ExtResource( 2 )
+
+[node name="Colision" type="CollisionShape2D" parent="Jugador"]
+position = Vector2( 66, 87 )
+shape = SubResource( 3 )
+
+[node name="Suelo" type="StaticBody2D" parent="."]
+
+[node name="Piso" type="Sprite" parent="Suelo"]
+position = Vector2( 512.578, 581.322 )
+scale = Vector2( 0.501495, 45.0496 )
+texture = SubResource( 4 )
+
+[node name="Colision" type="CollisionShape2D" parent="Suelo"]
+position = Vector2( 512, 580 )
+shape = SubResource( 5 )

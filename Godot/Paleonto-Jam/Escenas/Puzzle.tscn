@@ -1,0 +1,182 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Puzzle.gd" type="Script" id=1]
+[ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Pieza1.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/puzzlebackground.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Brocha.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Martillo.gd" type="Script" id=7]
+[ext_resource path="res://Musica/maqueta PUzzle.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sprites/portrait_cientifico.png" type="Texture" id=9]
+[ext_resource path="res://tools_cepillo.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/tools_martillo.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Pieza2.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Pieza3.gd" type="Script" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64.7832, 54.0823 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 56.3766, 17.1179 )
+
+[node name="Puzzle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = -1.0
+margin_bottom = -1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AreaPuzzle" type="Sprite" parent="."]
+position = Vector2( 512.653, 299.813 )
+scale = Vector2( 3.00313, 2.9799 )
+texture = ExtResource( 5 )
+
+[node name="TextoAA" type="Label" parent="."]
+margin_left = 647.0
+margin_top = 362.0
+margin_right = 893.0
+margin_bottom = 589.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "hoola aficionado 
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pieza1" type="Area2D" parent="."]
+position = Vector2( 89.0899, 65.9265 )
+script = ExtResource( 4 )
+
+[node name="Forma" type="Sprite" parent="Pieza1"]
+position = Vector2( 72.1628, 57.0175 )
+scale = Vector2( 1.64033, 1.38977 )
+texture = ExtResource( 3 )
+
+[node name="Bg" type="ColorRect" parent="Pieza1/Forma"]
+margin_left = -44.0
+margin_top = -41.0
+margin_right = 43.0
+margin_bottom = 44.0
+color = Color( 0.356863, 0.219608, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colision" type="CollisionShape2D" parent="Pieza1"]
+position = Vector2( 71, 59 )
+shape = SubResource( 2 )
+
+[node name="TiempoEspera" type="Timer" parent="Pieza1"]
+wait_time = 3.0
+
+[node name="TiempoLimpiar" type="Timer" parent="Pieza1"]
+
+[node name="Pieza2" type="Area2D" parent="."]
+position = Vector2( 359.205, 181.892 )
+script = ExtResource( 12 )
+
+[node name="Forma" type="Sprite" parent="Pieza2"]
+position = Vector2( 72.1628, 57.0175 )
+scale = Vector2( 1.64033, 1.38977 )
+texture = ExtResource( 3 )
+
+[node name="Bg" type="ColorRect" parent="Pieza2/Forma"]
+margin_left = -44.0
+margin_top = -41.0
+margin_right = 43.0
+margin_bottom = 44.0
+color = Color( 0.356863, 0.219608, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colision" type="CollisionShape2D" parent="Pieza2"]
+position = Vector2( 71, 59 )
+shape = SubResource( 2 )
+
+[node name="TiempoEspera" type="Timer" parent="Pieza2"]
+wait_time = 3.0
+
+[node name="TiempoLimpiar" type="Timer" parent="Pieza2"]
+
+[node name="Pieza3" type="Area2D" parent="."]
+position = Vector2( 632.148, 64.5123 )
+script = ExtResource( 13 )
+
+[node name="Forma" type="Sprite" parent="Pieza3"]
+position = Vector2( 72.1628, 57.0175 )
+scale = Vector2( 1.64033, 1.38977 )
+texture = ExtResource( 3 )
+
+[node name="Bg" type="ColorRect" parent="Pieza3/Forma"]
+margin_left = -44.0
+margin_top = -41.0
+margin_right = 43.0
+margin_bottom = 44.0
+color = Color( 0.356863, 0.219608, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colision" type="CollisionShape2D" parent="Pieza3"]
+position = Vector2( 71, 59 )
+shape = SubResource( 2 )
+
+[node name="TiempoEspera" type="Timer" parent="Pieza3"]
+wait_time = 3.0
+
+[node name="TiempoLimpiar" type="Timer" parent="Pieza3"]
+
+[node name="Brocha" type="Area2D" parent="."]
+position = Vector2( 885.298, 15.5564 )
+script = ExtResource( 6 )
+
+[node name="ImgBrocha" type="Sprite" parent="Brocha"]
+position = Vector2( 38.4767, 13.7279 )
+scale = Vector2( 2.85616, 1.91924 )
+texture = ExtResource( 10 )
+hframes = 2
+
+[node name="ColisionBrocha" type="CollisionShape2D" parent="Brocha"]
+position = Vector2( 59, 16 )
+shape = SubResource( 3 )
+
+[node name="Martillo" type="Area2D" parent="."]
+position = Vector2( 885, 82 )
+script = ExtResource( 7 )
+
+[node name="ImgMartillo" type="Sprite" parent="Martillo"]
+position = Vector2( 39.3051, 16.9706 )
+scale = Vector2( 2.41421, 2.27279 )
+texture = ExtResource( 11 )
+hframes = 2
+
+[node name="ColisionMartillo" type="CollisionShape2D" parent="Martillo"]
+position = Vector2( 59, 16 )
+shape = SubResource( 3 )
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="portrait_cientifico" type="Sprite" parent="."]
+position = Vector2( 975.955, 383.584 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+[connection signal="area_entered" from="Pieza1" to="Pieza1" method="_on_Pieza1_area_entered"]
+[connection signal="timeout" from="Pieza1/TiempoEspera" to="Pieza1" method="_on_TiempoEspera"]
+[connection signal="area_entered" from="Pieza2" to="Pieza2" method="_on_Pieza2_area_entered"]
+[connection signal="timeout" from="Pieza2/TiempoEspera" to="Pieza2" method="_on_TiempoEspera"]
+[connection signal="area_entered" from="Pieza3" to="Pieza3" method="_on_Pieza3_area_entered"]
+[connection signal="timeout" from="Pieza3/TiempoEspera" to="Pieza3" method="_on_TiempoEspera"]
