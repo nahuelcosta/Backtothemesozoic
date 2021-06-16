@@ -1,15 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Jurassic_Park.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 200
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 120
-font_data = ExtResource( 2 )
+[ext_resource path="res://botonStart.png" type="Texture" id=2]
+[ext_resource path="res://TitleScreen.png" type="Texture" id=3]
+[ext_resource path="res://botonStartPressed.png" type="Texture" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,35 +13,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.0
-margin_right = 2.0
-color = Color( 0.141176, 0.152941, 0.262745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TitleScreen" type="Sprite" parent="."]
+position = Vector2( 510.997, 300.236 )
+scale = Vector2( 3.00727, 3.00111 )
+texture = ExtResource( 3 )
 
-[node name="TextoTitulo" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -292.0
-margin_top = -250.5
-margin_right = 292.0
-margin_bottom = 10.5
-custom_fonts/font = SubResource( 1 )
-text = "Back to 
-the mesozoic"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -56,8 +27,10 @@ margin_left = -151.0
 margin_top = -208.0
 margin_right = 151.0
 margin_bottom = -104.0
-custom_fonts/font = SubResource( 2 )
-text = "Start"
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

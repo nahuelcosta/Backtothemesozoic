@@ -7,9 +7,10 @@ var start = false
 var timer = false
 var brocha = 0
 var suma = false
-var move3 = Vector2(rand_range(620, 720), rand_range(10, 210))
 
 func _ready():
+	randomize()
+	var move3 = Vector2(rand_range(620, 720), rand_range(10, 210))
 	position = move3
 	GV.texto = -1
 	GV.herramienta = 0

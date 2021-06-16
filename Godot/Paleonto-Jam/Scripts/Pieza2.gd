@@ -11,7 +11,7 @@ var move2 = Vector2(rand_range(320, 420), rand_range(10, 210))
 
 func _ready():
 	randomize()
-	position = Vector2(rand_range(320, 420), rand_range(10, 210))
+	position = move2
 	GV.texto = -1
 	GV.herramienta = 0
 	

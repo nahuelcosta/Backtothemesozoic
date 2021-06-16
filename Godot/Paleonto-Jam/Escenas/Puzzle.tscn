@@ -168,7 +168,6 @@ shape = SubResource( 3 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-autoplay = true
 
 [node name="portrait_cientifico" type="Sprite" parent="."]
 position = Vector2( 975.955, 383.584 )
