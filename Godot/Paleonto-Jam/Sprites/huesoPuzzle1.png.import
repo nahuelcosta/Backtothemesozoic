@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scroll_bg_cloud_1.png-c2e9fab6b953e112c45916277e32afcf.stex"
+path="res://.import/huesoPuzzle1.png-05fc9caccb1be83e348c40ef1333c0ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/scroll_bg_cloud_1.png"
-dest_files=[ "res://.import/scroll_bg_cloud_1.png-c2e9fab6b953e112c45916277e32afcf.stex" ]
+source_file="res://Sprites/huesoPuzzle1.png"
+dest_files=[ "res://.import/huesoPuzzle1.png-05fc9caccb1be83e348c40ef1333c0ac.stex" ]
 
 [params]
 
