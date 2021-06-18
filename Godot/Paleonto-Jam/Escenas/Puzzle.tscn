@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Puzzle.gd" type="Script" id=1]
 [ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/huesoPuzzle3.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Pieza1.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/puzzlebackground.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Brocha.gd" type="Script" id=6]
@@ -13,16 +13,23 @@
 [ext_resource path="res://Sprites/tools_martillo.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Pieza2.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/Pieza3.gd" type="Script" id=13]
+[ext_resource path="res://Sprites/tools_pinzas.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Pinzas.gd" type="Script" id=15]
+[ext_resource path="res://Sprites/huesoPuzzle1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/huesoPuzzle2.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
-size = 21
+size = 24
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64.7832, 54.0823 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 56.3766, 17.1179 )
+extents = Vector2( 65.0691, 52.9967 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25.8779, 13.8766 )
 
 [node name="Puzzle" type="Control"]
 anchor_right = 1.0
@@ -38,18 +45,16 @@ __meta__ = {
 
 [node name="AreaPuzzle" type="Sprite" parent="."]
 position = Vector2( 512.653, 299.813 )
-scale = Vector2( 3.00313, 2.9799 )
 texture = ExtResource( 5 )
 
-[node name="TextoAA" type="Label" parent="."]
+[node name="TextoAA" type="RichTextLabel" parent="."]
+anchor_right = 1.0
 margin_left = 647.0
-margin_top = 362.0
-margin_right = 893.0
-margin_bottom = 589.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "hoola aficionado 
-"
+margin_top = 358.0
+margin_right = -134.0
+margin_bottom = 585.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "hoola aficionado "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,17 +66,8 @@ script = ExtResource( 4 )
 [node name="Forma" type="Sprite" parent="Pieza1"]
 position = Vector2( 72.1628, 57.0175 )
 scale = Vector2( 1.64033, 1.38977 )
-texture = ExtResource( 3 )
-
-[node name="Bg" type="ColorRect" parent="Pieza1/Forma"]
-margin_left = -44.0
-margin_top = -41.0
-margin_right = 43.0
-margin_bottom = 44.0
-color = Color( 0.356863, 0.219608, 0.2, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 16 )
+hframes = 10
 
 [node name="Colision" type="CollisionShape2D" parent="Pieza1"]
 position = Vector2( 71, 59 )
@@ -83,30 +79,18 @@ wait_time = 3.0
 [node name="TiempoLimpiar" type="Timer" parent="Pieza1"]
 
 [node name="Pieza2" type="Area2D" parent="."]
-position = Vector2( 359.205, 181.892 )
+position = Vector2( 354.962, 109.767 )
 script = ExtResource( 12 )
 
-[node name="Forma" type="Sprite" parent="Pieza2"]
+[node name="Forma2" type="Sprite" parent="Pieza2"]
 position = Vector2( 72.1628, 57.0175 )
 scale = Vector2( 1.64033, 1.38977 )
-texture = ExtResource( 3 )
+texture = ExtResource( 17 )
+hframes = 10
 
-[node name="Bg" type="ColorRect" parent="Pieza2/Forma"]
-margin_left = -44.0
-margin_top = -41.0
-margin_right = 43.0
-margin_bottom = 44.0
-color = Color( 0.356863, 0.219608, 0.2, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Colision" type="CollisionShape2D" parent="Pieza2"]
-position = Vector2( 71, 59 )
-shape = SubResource( 2 )
-
-[node name="TiempoEspera" type="Timer" parent="Pieza2"]
-wait_time = 3.0
+[node name="Colision2" type="CollisionShape2D" parent="Pieza2"]
+position = Vector2( 71.2427, 59 )
+shape = SubResource( 3 )
 
 [node name="TiempoLimpiar" type="Timer" parent="Pieza2"]
 
@@ -114,27 +98,15 @@ wait_time = 3.0
 position = Vector2( 632.148, 64.5123 )
 script = ExtResource( 13 )
 
-[node name="Forma" type="Sprite" parent="Pieza3"]
-position = Vector2( 72.1628, 57.0175 )
+[node name="Forma3" type="Sprite" parent="Pieza3"]
+position = Vector2( 73.1628, 57.0175 )
 scale = Vector2( 1.64033, 1.38977 )
 texture = ExtResource( 3 )
+hframes = 10
 
-[node name="Bg" type="ColorRect" parent="Pieza3/Forma"]
-margin_left = -44.0
-margin_top = -41.0
-margin_right = 43.0
-margin_bottom = 44.0
-color = Color( 0.356863, 0.219608, 0.2, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Colision" type="CollisionShape2D" parent="Pieza3"]
+[node name="Colision3" type="CollisionShape2D" parent="Pieza3"]
 position = Vector2( 71, 59 )
 shape = SubResource( 2 )
-
-[node name="TiempoEspera" type="Timer" parent="Pieza3"]
-wait_time = 3.0
 
 [node name="TiempoLimpiar" type="Timer" parent="Pieza3"]
 
@@ -149,8 +121,8 @@ texture = ExtResource( 10 )
 hframes = 2
 
 [node name="ColisionBrocha" type="CollisionShape2D" parent="Brocha"]
-position = Vector2( 59, 16 )
-shape = SubResource( 3 )
+position = Vector2( 42, 16 )
+shape = SubResource( 4 )
 
 [node name="Martillo" type="Area2D" parent="."]
 position = Vector2( 885, 82 )
@@ -163,19 +135,31 @@ texture = ExtResource( 11 )
 hframes = 2
 
 [node name="ColisionMartillo" type="CollisionShape2D" parent="Martillo"]
-position = Vector2( 59, 16 )
-shape = SubResource( 3 )
+position = Vector2( 49, 16 )
+shape = SubResource( 4 )
+
+[node name="Pinzas" type="Area2D" parent="."]
+position = Vector2( 884.586, 151.296 )
+script = ExtResource( 15 )
+
+[node name="ImgPinzas" type="Sprite" parent="Pinzas"]
+position = Vector2( 36.4767, 16.9706 )
+scale = Vector2( 2.41421, 2.27279 )
+texture = ExtResource( 14 )
+hframes = 2
+
+[node name="ColisionPinzas" type="CollisionShape2D" parent="Pinzas"]
+position = Vector2( 47.4142, 18 )
+shape = SubResource( 4 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
 [node name="portrait_cientifico" type="Sprite" parent="."]
-position = Vector2( 975.955, 383.584 )
+position = Vector2( 974.541, 383.584 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 [connection signal="area_entered" from="Pieza1" to="Pieza1" method="_on_Pieza1_area_entered"]
 [connection signal="timeout" from="Pieza1/TiempoEspera" to="Pieza1" method="_on_TiempoEspera"]
 [connection signal="area_entered" from="Pieza2" to="Pieza2" method="_on_Pieza2_area_entered"]
-[connection signal="timeout" from="Pieza2/TiempoEspera" to="Pieza2" method="_on_TiempoEspera"]
 [connection signal="area_entered" from="Pieza3" to="Pieza3" method="_on_Pieza3_area_entered"]
-[connection signal="timeout" from="Pieza3/TiempoEspera" to="Pieza3" method="_on_TiempoEspera"]

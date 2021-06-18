@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Personaje2.png-866b39985e0ff8bc04a0fd877528d5e6.stex"
+path="res://.import/huesoPuzzle2.png-d83517562f100d661a6ca3efd20c7039.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Personaje2.png"
-dest_files=[ "res://.import/Personaje2.png-866b39985e0ff8bc04a0fd877528d5e6.stex" ]
+source_file="res://Sprites/huesoPuzzle2.png"
+dest_files=[ "res://.import/huesoPuzzle2.png-d83517562f100d661a6ca3efd20c7039.stex" ]
 
 [params]
 
