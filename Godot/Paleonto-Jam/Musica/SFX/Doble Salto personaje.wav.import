@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Doble Salto personaje.wav-0ac623ba8b986225663b3a4085b2b58f.sample"
+
+[deps]
+
+source_file="res://Musica/SFX/Doble Salto personaje.wav"
+dest_files=[ "res://.import/Doble Salto personaje.wav-0ac623ba8b986225663b3a4085b2b58f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

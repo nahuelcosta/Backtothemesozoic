@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Barrida 1.wav-5d625d766ca6d060a96c8828a2824558.sample"
+
+[deps]
+
+source_file="res://Musica/SFX/Barrida 1.wav"
+dest_files=[ "res://.import/Barrida 1.wav-5d625d766ca6d060a96c8828a2824558.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

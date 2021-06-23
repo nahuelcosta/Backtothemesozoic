@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Maqueta menú.mp3-a4039cb42e9a4b93689add1906b2fe1c.mp3str"
+
+[deps]
+
+source_file="res://Musica/SFX/Maqueta menú.mp3"
+dest_files=[ "res://.import/Maqueta menú.mp3-a4039cb42e9a4b93689add1906b2fe1c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
