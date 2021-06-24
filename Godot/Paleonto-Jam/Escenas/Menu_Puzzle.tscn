@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Menu_Puzzle.gd" type="Script" id=1]
+
+[node name="Menu_Puzzle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chat" type="ParallaxBackground" parent="."]
+
+[node name="Chatbox" type="ParallaxLayer" parent="Chat"]
+
+[node name="Chat1" type="ColorRect" parent="Chat/Chatbox"]
+margin_left = 42.0
+margin_top = 602.0
+margin_right = 492.0
+margin_bottom = 694.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Chat/Chatbox/Chat1"]
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 432.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "¡Bienvenido aventurero! Gracias por ayudarnos a montar esta 
+exhibición del pasado. Hay que tenerla lista para mañana, o ya no 
+podremos presenciar tal y como era lo que encontremos aquí, ¡se
+llevarán el reintegrador molecular a otro sitio!"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chat2" type="ColorRect" parent="Chat/Chatbox"]
+margin_left = 730.0
+margin_top = 714.0
+margin_right = 978.0
+margin_bottom = 737.0
+color = Color( 0, 0.580392, 0.894118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Chat/Chatbox/Chat2"]
+margin_left = 7.0
+margin_top = 4.0
+margin_right = 245.0
+margin_bottom = 18.0
+text = "Con todo gusto ayudo ¿Qué hay aquí?"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chat3" type="ColorRect" parent="Chat/Chatbox"]
+margin_left = 42.0
+margin_top = 754.0
+margin_right = 708.0
+margin_bottom = 846.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Chat/Chatbox/Chat3"]
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 655.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "En este estrato del siglo XXI, antes de la Gran Hecatombe, encontramos algo muy interesante …
+Cuadernos y signos de exhibición en las cercanías que se refieren a estos huesos fósiles… ¡Parece que
+este era un museo de sitio paleontológico! Eso parece ser un fósil de dinosaurio, o sea que
+originalmente no es del siglo XXI humano, ¡es mucho más antiguo, del Mesozoico!"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chat4" type="ColorRect" parent="Chat/Chatbox"]
+margin_left = 932.0
+margin_top = 858.0
+margin_right = 978.0
+margin_bottom = 881.0
+color = Color( 0, 0.580392, 0.894118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Chat/Chatbox/Chat4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -4.0
+text = "¡¡Oh!!"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chat5" type="ColorRect" parent="Chat/Chatbox"]
+margin_left = 41.0
+margin_top = 890.0
+margin_right = 707.0
+margin_bottom = 961.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Chat/Chatbox/Chat5"]
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 643.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Por favor ayúdanos a extraer, limpiar y restaurar este cráneo fósil. Aquí tienes la brocha y el agua a
+presión para limpiarlo. Y por supuesto, nuestro martillo láser … ¡cuidado con no romper más los
+huesos!"
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Victory (FINAL).wav-9142f8c28b1ca5783639de207af6ab97.sample"
+
+[deps]
+
+source_file="res://Musica/Musica/Victory (FINAL).wav"
+dest_files=[ "res://.import/Victory (FINAL).wav-9142f8c28b1ca5783639de207af6ab97.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

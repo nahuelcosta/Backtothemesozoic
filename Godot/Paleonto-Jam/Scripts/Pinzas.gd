@@ -14,9 +14,9 @@ func _process(delta):
 		$ImgPinzas.frame_coords.x = 1
 	
 	elif GV.herramienta != 2:
-		$ImgPinzas.position = Vector2(38, 20)
-		$ColisionPinzas.position = Vector2(38, 20)
+		$ImgPinzas.position = Vector2(38, 15)
+		$ColisionPinzas.position = Vector2(38, 15)
 		$ImgPinzas.frame_coords.x = 0
 			
-		if GV.reset == true:
-			_ready()
+	if GV.reset == true:
+		_ready()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Puzzle.gd" type="Script" id=1]
 [ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=2]
@@ -12,24 +12,29 @@
 [ext_resource path="res://tools_cepillo.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/tools_martillo.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Pieza2.gd" type="Script" id=12]
-[ext_resource path="res://Scripts/Pieza3.gd" type="Script" id=13]
+[ext_resource path="res://Sprites/huesoPuzzleColision1.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/tools_pinzas.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/Pinzas.gd" type="Script" id=15]
 [ext_resource path="res://Sprites/huesoPuzzle1.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/huesoPuzzle2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/tools_laser.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/Laser.gd" type="Script" id=19]
+[ext_resource path="res://Sprites/huesoPuzzleColision2.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/huesoPuzzleColision3.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/Pieza3.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 64.7832, 54.0823 )
+extents = Vector2( 47.1373, 54.0823 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 65.0691, 52.9967 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 25.8779, 13.8766 )
+extents = Vector2( 9.38226, 13.1642 )
 
 [node name="Puzzle" type="Control"]
 anchor_right = 1.0
@@ -70,13 +75,28 @@ texture = ExtResource( 16 )
 hframes = 10
 
 [node name="Colision" type="CollisionShape2D" parent="Pieza1"]
-position = Vector2( 71, 59 )
+position = Vector2( 73.5, 59 )
 shape = SubResource( 2 )
 
 [node name="TiempoEspera" type="Timer" parent="Pieza1"]
 wait_time = 3.0
 
-[node name="TiempoLimpiar" type="Timer" parent="Pieza1"]
+[node name="AreaHueso1" type="Area2D" parent="Pieza1"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="ColisionLaser" type="CollisionPolygon2D" parent="Pieza1/AreaHueso1"]
+position = Vector2( 56.2929, 101 )
+polygon = PoolVector2Array( -3.40616, -7.94093, -4.40616, 2.55907, 10.0938, 2.05907, 14.5938, -26.9409, 25.5938, -34.9409, 26.0938, -54.9409, 42.5938, -69.9409, 41.5938, -77.4409, 31.0938, -81.4409, 21.5938, -76.9409, 12.0938, -54.4409, 14.5938, -41.4409 )
+
+[node name="FormaColisionLaser" type="Sprite" parent="Pieza1/AreaHueso1"]
+position = Vector2( 72.9038, 58.1635 )
+scale = Vector2( 1.60465, 1.32143 )
+texture = ExtResource( 13 )
+
+[node name="TiempoLimpiar" type="Timer" parent="Pieza1/AreaHueso1"]
+wait_time = 3.0
+one_shot = true
 
 [node name="Pieza2" type="Area2D" parent="."]
 position = Vector2( 354.962, 109.767 )
@@ -92,23 +112,51 @@ hframes = 10
 position = Vector2( 71.2427, 59 )
 shape = SubResource( 3 )
 
-[node name="TiempoLimpiar" type="Timer" parent="Pieza2"]
+[node name="TiempoEspera2" type="Timer" parent="Pieza2"]
+
+[node name="AreaHueso2" type="Area2D" parent="Pieza2"]
+
+[node name="ColisionLaser2" type="CollisionPolygon2D" parent="Pieza2/AreaHueso2"]
+polygon = PoolVector2Array( 33.038, 51.983, 33.788, 60.483, 39.788, 66.733, 45.788, 58.233, 62.288, 58.733, 77.538, 76.483, 86.038, 68.733, 94.538, 66.233, 101.788, 52.233, 108.288, 46.483, 103.038, 43.733, 90.788, 50.233, 84.538, 46.483, 82.538, 37.233, 79.788, 37.983, 72.538, 47.233, 54.538, 45.483, 47.288, 42.233 )
+
+[node name="FormaPuzzleColision2" type="Sprite" parent="Pieza2/AreaHueso2"]
+position = Vector2( 71.2221, 55.696 )
+scale = Vector2( 1.41304, 1.30357 )
+texture = ExtResource( 20 )
+
+[node name="TiempoLimpiar2" type="Timer" parent="Pieza2/AreaHueso2"]
+wait_time = 3.0
+one_shot = true
 
 [node name="Pieza3" type="Area2D" parent="."]
 position = Vector2( 632.148, 64.5123 )
-script = ExtResource( 13 )
+script = ExtResource( 22 )
 
 [node name="Forma3" type="Sprite" parent="Pieza3"]
 position = Vector2( 73.1628, 57.0175 )
 scale = Vector2( 1.64033, 1.38977 )
 texture = ExtResource( 3 )
 hframes = 10
+frame = 6
 
 [node name="Colision3" type="CollisionShape2D" parent="Pieza3"]
 position = Vector2( 71, 59 )
 shape = SubResource( 2 )
 
-[node name="TiempoLimpiar" type="Timer" parent="Pieza3"]
+[node name="TiempoEspera3" type="Timer" parent="Pieza3"]
+
+[node name="AreaHueso3" type="Area2D" parent="Pieza3"]
+
+[node name="ColisionLaser3" type="CollisionPolygon2D" parent="Pieza3/AreaHueso3"]
+polygon = PoolVector2Array( -4.65839, 79.1848, -3.95123, 87.6701, 12.3122, 90.4986, 20.7975, 83.4275, 33.5255, 74.9422, 62.5168, 74.9422, 70.295, 68.5782, 78.7802, 72.8209, 101.408, 69.9925, 112.721, 61.5072, 121.914, 62.2143, 142.42, 74.9422, 144.541, 62.9214, 154.441, 59.3858, 143.127, 52.3148, 146.663, 45.9508, 134.642, 36.0513, 143.834, 23.3234, 128.985, 9.18127, 108.479, 13.4239, 107.065, 21.2021, 116.964, 31.8087, 95.0437, 36.0513, 80.9016, 31.1016, 51.2031, 33.93 )
+
+[node name="FormaPuzzleColision3" type="Sprite" parent="Pieza3/AreaHueso3"]
+position = Vector2( 79.4873, 55.8503 )
+scale = Vector2( 1.64033, 1.38977 )
+texture = ExtResource( 21 )
+
+[node name="TiempoLimpiar3" type="Timer" parent="Pieza3/AreaHueso3"]
+one_shot = true
 
 [node name="Brocha" type="Area2D" parent="."]
 position = Vector2( 885.298, 15.5564 )
@@ -121,7 +169,7 @@ texture = ExtResource( 10 )
 hframes = 2
 
 [node name="ColisionBrocha" type="CollisionShape2D" parent="Brocha"]
-position = Vector2( 42, 16 )
+position = Vector2( -0.5, 14 )
 shape = SubResource( 4 )
 
 [node name="Martillo" type="Area2D" parent="."]
@@ -135,7 +183,7 @@ texture = ExtResource( 11 )
 hframes = 2
 
 [node name="ColisionMartillo" type="CollisionShape2D" parent="Martillo"]
-position = Vector2( 49, 16 )
+position = Vector2( 0, 14 )
 shape = SubResource( 4 )
 
 [node name="Pinzas" type="Area2D" parent="."]
@@ -149,17 +197,42 @@ texture = ExtResource( 14 )
 hframes = 2
 
 [node name="ColisionPinzas" type="CollisionShape2D" parent="Pinzas"]
-position = Vector2( 47.4142, 18 )
+position = Vector2( 0.4142, 18 )
+shape = SubResource( 4 )
+
+[node name="Laser" type="Area2D" parent="."]
+position = Vector2( 884.586, 221.296 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 19 )
+
+[node name="ImgLaser" type="Sprite" parent="Laser"]
+position = Vector2( 36.4767, 16.9706 )
+scale = Vector2( 2.41421, 2.27279 )
+texture = ExtResource( 18 )
+hframes = 2
+
+[node name="ColisionLaser" type="CollisionShape2D" parent="Laser"]
+position = Vector2( 0.594315, 16.5858 )
 shape = SubResource( 4 )
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
 [node name="portrait_cientifico" type="Sprite" parent="."]
-position = Vector2( 974.541, 383.584 )
+position = Vector2( 974.541, 382.584 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
-[connection signal="area_entered" from="Pieza1" to="Pieza1" method="_on_Pieza1_area_entered"]
+[connection signal="area_entered" from="Pieza1" to="Pieza1" method="_Pieza1_entered"]
 [connection signal="timeout" from="Pieza1/TiempoEspera" to="Pieza1" method="_on_TiempoEspera"]
-[connection signal="area_entered" from="Pieza2" to="Pieza2" method="_on_Pieza2_area_entered"]
-[connection signal="area_entered" from="Pieza3" to="Pieza3" method="_on_Pieza3_area_entered"]
+[connection signal="area_entered" from="Pieza1/AreaHueso1" to="Pieza1" method="_on_AreaHueso1_area_entered"]
+[connection signal="area_exited" from="Pieza1/AreaHueso1" to="Pieza1" method="_on_AreaHueso1_area_exited"]
+[connection signal="timeout" from="Pieza1/AreaHueso1/TiempoLimpiar" to="Pieza1" method="_on_TiempoLimpiar_timeout"]
+[connection signal="area_entered" from="Pieza2" to="Pieza2" method="_Pieza2_entered"]
+[connection signal="area_entered" from="Pieza2/AreaHueso2" to="Pieza2" method="_on_AreaHueso2_area_entered"]
+[connection signal="area_exited" from="Pieza2/AreaHueso2" to="Pieza2" method="_on_AreaHueso2_area_exited"]
+[connection signal="timeout" from="Pieza2/AreaHueso2/TiempoLimpiar2" to="Pieza2" method="_on_TiempoLimpiar2_timeout"]
+[connection signal="area_entered" from="Pieza3" to="Pieza3" method="_Pieza3_entered"]
+[connection signal="area_entered" from="Pieza3/AreaHueso3" to="Pieza3" method="_on_AreaHueso3_area_entered"]
+[connection signal="area_exited" from="Pieza3/AreaHueso3" to="Pieza3" method="_on_AreaHueso3_area_exited"]
+[connection signal="timeout" from="Pieza3/AreaHueso3/TiempoLimpiar3" to="Pieza3" method="_on_TiempoLimpiar3_timeout"]

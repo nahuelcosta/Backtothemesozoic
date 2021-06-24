@@ -1,11 +1,22 @@
 extends Control
 
+var herramienta = false
+
 func _process(delta):
+	if Input.is_action_just_pressed("clickder"):
+		GV.herramienta += 1
+		if GV.herramienta > 3:
+			GV.herramienta = 0
 	
 	if GV.reset == true:
 		GV.texto = 0
+		GV.moveP = "ninguno"
 		GV.reset = false
+		GV.cuentahuesos = 0
 	
+	if GV.cuentahuesos == 3:
+		Transicion._change_scene("res://Escenas/Demo.tscn")
+			
 	match GV.herramienta:
 		0:
 			GV.texto = 0
@@ -15,6 +26,8 @@ func _process(delta):
 			GV.texto = 1
 		2:
 			GV.texto = 2
+		3:
+			GV.texto = 3
 	
 	match GV.texto:
 		0:
@@ -22,6 +35,8 @@ func _process(delta):
 		0.5:
 			$TextoAA.text = "Sigue limpiando ahí, estás cerca de terminar."
 		1:
-			$TextoAA.text = "El martillo te ayudará a soltar la pieza, haz click derecho en esta varias veces para soltarla."
+			$TextoAA.text = "El martillo te ayudará a soltar el fósil, haz click izquierdo en este varias veces para soltarlo."
 		2:
-			$TextoAA.text = "Mueve la pieza a la mesa de trabajo, a tu izquierda."
+			$TextoAA.text = "Mueve el fósil a la mesa de trabajo, a tu izquierda."
+		4:
+			$TextoAA.text = "¡Excelente!, has terminado las excavaciones."
