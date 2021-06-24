@@ -12,3 +12,4 @@ var start = false
 var MovePieza1 = false
 var herramienta = 0
 var moveP = "ninguno"
+var investigar = false

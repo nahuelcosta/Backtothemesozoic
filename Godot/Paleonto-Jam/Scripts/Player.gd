@@ -93,7 +93,7 @@ func _move(delta):
 		$Personaje.flip_h = false
 	
 	var vidas = VIDAS+GV.resta
-	$Camara/HuesosLabel.text = "Huesos= " + str(GV.monedas)
+	$Camara/HuesosLabel.text = "información= " + str(GV.monedas)
 	$Camara/vidas.text = "Vidas= " + str(vidas)
 	
 	if vidas <=0:
@@ -103,3 +103,5 @@ func _move(delta):
 	if GV.reset == true:
 		_ready()
 		GV.reset = false
+	if GV.investigar == true:
+		$Personaje.animation = "investigando"
