@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GV="*res://Scripts/GlobalVar.gd"
+Transicion="*res://Escenas/Transicion.tscn"
 
 [display]
 

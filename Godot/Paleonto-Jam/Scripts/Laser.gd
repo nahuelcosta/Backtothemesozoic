@@ -8,6 +8,7 @@ func _ready():
 func _process(delta):
 	var mover_pieza = get_local_mouse_position()
 	if GV.herramienta == 3:
+		$LaserWav.play()
 		posicion_pieza = mover_pieza
 		$ImgLaser.position = posicion_pieza
 		$ColisionLaser.position = posicion_pieza

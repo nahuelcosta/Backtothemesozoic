@@ -12,6 +12,8 @@ func _process(delta):
 		$ImgMartillo.position = posicion_pieza
 		$ColisionMartillo.position = posicion_pieza
 		$ImgMartillo.frame_coords.x = 1
+		if Input.is_action_just_pressed("click"):
+			$MartilloWav.play()
 	
 	elif GV.herramienta != 1:
 		$ImgMartillo.position = Vector2(38, 16)

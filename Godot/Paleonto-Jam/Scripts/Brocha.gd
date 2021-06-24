@@ -8,6 +8,7 @@ func _ready():
 func _process(delta):
 	var mover_pieza = get_local_mouse_position()
 	if GV.herramienta == 0:
+		$BorchaWav.play()
 		posicion_pieza = mover_pieza
 		$ImgBrocha.position = posicion_pieza
 		$ColisionBrocha.position = posicion_pieza

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/Puzzle.gd" type="Script" id=1]
 [ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://Sprites/huesoPuzzleColision2.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/huesoPuzzleColision3.png" type="Texture" id=21]
 [ext_resource path="res://Scripts/Pieza3.gd" type="Script" id=22]
+[ext_resource path="res://Musica/SFX/Barrida 1.wav" type="AudioStream" id=23]
+[ext_resource path="res://Musica/SFX/golpe sincel 2.wav" type="AudioStream" id=24]
+[ext_resource path="res://Musica/SFX/Laser.wav" type="AudioStream" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -172,6 +175,10 @@ hframes = 2
 position = Vector2( -0.5, 14 )
 shape = SubResource( 4 )
 
+[node name="BorchaWav" type="AudioStreamPlayer" parent="Brocha"]
+stream = ExtResource( 23 )
+volume_db = -20.0
+
 [node name="Martillo" type="Area2D" parent="."]
 position = Vector2( 885, 82 )
 script = ExtResource( 7 )
@@ -185,6 +192,10 @@ hframes = 2
 [node name="ColisionMartillo" type="CollisionShape2D" parent="Martillo"]
 position = Vector2( 0, 14 )
 shape = SubResource( 4 )
+
+[node name="MartilloWav" type="AudioStreamPlayer" parent="Martillo"]
+stream = ExtResource( 24 )
+volume_db = -20.0
 
 [node name="Pinzas" type="Area2D" parent="."]
 position = Vector2( 884.586, 151.296 )
@@ -216,8 +227,14 @@ hframes = 2
 position = Vector2( 0.594315, 16.5858 )
 shape = SubResource( 4 )
 
+[node name="LaserWav" type="AudioStreamPlayer" parent="Laser"]
+stream = ExtResource( 25 )
+volume_db = -5.0
+
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -25.0
+autoplay = true
 
 [node name="portrait_cientifico" type="Sprite" parent="."]
 position = Vector2( 974.541, 382.584 )
