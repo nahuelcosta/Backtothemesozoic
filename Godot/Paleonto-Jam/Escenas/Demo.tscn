@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=2]
+[gd_scene load_steps=175 format=2]
 
 [ext_resource path="res://Sprites/paleontologo_idle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/paleontologo_investigate.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Skull platformer.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/lugar investigación.png" type="Texture" id=10]
+[ext_resource path="res://Musica/Musica/Musica plataforma.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Scripts/Plataforma.gd" type="Script" id=13]
 [ext_resource path="res://Please write me a song.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scripts/Moneda.gd" type="Script" id=15]
@@ -1466,15 +1467,15 @@ animations = [ {
 "name": "investigando",
 "speed": 7.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "saltar",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ) ],
 "loop": true,
 "name": "Caminar",
 "speed": 24.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "saltar",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=119]
@@ -1799,7 +1800,7 @@ script = ExtResource( 2 )
 position = Vector2( 3.01469, 7.33371 )
 frames = SubResource( 118 )
 animation = "Stop"
-frame = 9
+frame = 8
 playing = true
 
 [node name="Colision" type="CollisionShape2D" parent="Jugador"]
@@ -1958,7 +1959,7 @@ shape = SubResource( 122 )
 position = Vector2( 2204.24, 319.283 )
 frames = SubResource( 155 )
 animation = "idle"
-frame = 8
+frame = 1
 playing = true
 
 [node name="dinopato2" type="KinematicBody2D" parent="."]
@@ -1971,7 +1972,12 @@ shape = SubResource( 122 )
 position = Vector2( 2143.79, 343.325 )
 frames = SubResource( 155 )
 animation = "hijo"
+frame = 9
 playing = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
 [connection signal="timeout" from="Plataforma/Contador" to="Plataforma" method="_on_Contador"]
 [connection signal="body_entered" from="Moneda/Area" to="Moneda" method="_on_Area_body_entered"]
