@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/puzzlebackground.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Brocha.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Martillo.gd" type="Script" id=7]
-[ext_resource path="res://Musica/maqueta PUzzle.wav" type="AudioStream" id=8]
+[ext_resource path="res://Musica/Musica/Musica puzzle.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sprites/portrait_cientifico.png" type="Texture" id=9]
 [ext_resource path="res://tools_cepillo.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/tools_martillo.png" type="Texture" id=11]
@@ -37,7 +37,7 @@ extents = Vector2( 47.1373, 54.0823 )
 extents = Vector2( 65.0691, 52.9967 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 9.38226, 13.1642 )
+extents = Vector2( 21.7128, 13.1642 )
 
 [node name="Puzzle" type="Control"]
 anchor_right = 1.0
@@ -172,7 +172,7 @@ texture = ExtResource( 10 )
 hframes = 2
 
 [node name="ColisionBrocha" type="CollisionShape2D" parent="Brocha"]
-position = Vector2( -0.5, 14 )
+position = Vector2( 31.5, 14 )
 shape = SubResource( 4 )
 
 [node name="BorchaWav" type="AudioStreamPlayer" parent="Brocha"]
@@ -190,7 +190,7 @@ texture = ExtResource( 11 )
 hframes = 2
 
 [node name="ColisionMartillo" type="CollisionShape2D" parent="Martillo"]
-position = Vector2( 0, 14 )
+position = Vector2( 40, 14 )
 shape = SubResource( 4 )
 
 [node name="MartilloWav" type="AudioStreamPlayer" parent="Martillo"]
@@ -208,7 +208,7 @@ texture = ExtResource( 14 )
 hframes = 2
 
 [node name="ColisionPinzas" type="CollisionShape2D" parent="Pinzas"]
-position = Vector2( 0.4142, 18 )
+position = Vector2( 40.4142, 18 )
 shape = SubResource( 4 )
 
 [node name="Laser" type="Area2D" parent="."]
@@ -224,7 +224,7 @@ texture = ExtResource( 18 )
 hframes = 2
 
 [node name="ColisionLaser" type="CollisionShape2D" parent="Laser"]
-position = Vector2( 0.594315, 16.5858 )
+position = Vector2( 40.5943, 16.5858 )
 shape = SubResource( 4 )
 
 [node name="LaserWav" type="AudioStreamPlayer" parent="Laser"]
@@ -233,7 +233,7 @@ volume_db = -5.0
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -25.0
+volume_db = -18.0
 autoplay = true
 
 [node name="portrait_cientifico" type="Sprite" parent="."]
