@@ -13,4 +13,4 @@ var herramienta = 0
 var moveP = "ninguno"
 var cuentahuesos = 0
 var resetP = "Pieza"
-var Investigar = false
+

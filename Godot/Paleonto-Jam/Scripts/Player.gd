@@ -103,5 +103,4 @@ func _move(delta):
 	if GV.reset == true:
 		_ready()
 		GV.reset = false
-	if GV.investigar == true:
-		$Personaje.animation = "investigando"
+	
