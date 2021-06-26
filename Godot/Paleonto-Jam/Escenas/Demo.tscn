@@ -1733,8 +1733,8 @@ shape = SubResource( 53 )
 position = Vector2( 0.00634766, 28.1482 )
 scale = Vector2( 5.17217, 5.44405 )
 texture = ExtResource( 10 )
-hframes = 9
 vframes = 2
+hframes = 9
 
 [node name="Moneda3" type="StaticBody2D" parent="."]
 position = Vector2( 829.584, 392.166 )
@@ -1751,8 +1751,8 @@ shape = SubResource( 53 )
 position = Vector2( 33.6868, 47.766 )
 scale = Vector2( 4.59362, 5.57578 )
 texture = ExtResource( 10 )
-hframes = 8
 vframes = 2
+hframes = 8
 
 [node name="Moneda4" type="StaticBody2D" parent="."]
 position = Vector2( 1891.86, 550.488 )
@@ -1769,8 +1769,8 @@ shape = SubResource( 53 )
 position = Vector2( 33.4316, 49.9486 )
 scale = Vector2( 5.19672, 5.55879 )
 texture = ExtResource( 10 )
-hframes = 10
 vframes = 2
+hframes = 10
 
 [node name="Moneda5" type="StaticBody2D" parent="."]
 position = Vector2( 458.794, 132.516 )
@@ -1788,8 +1788,8 @@ shape = SubResource( 53 )
 position = Vector2( 38.5294, 29.0639 )
 scale = Vector2( 5.83669, 6.59729 )
 texture = ExtResource( 10 )
-hframes = 9
 vframes = 3
+hframes = 9
 
 [node name="Jugador" type="KinematicBody2D" parent="."]
 position = Vector2( 20, -5 )
@@ -1799,7 +1799,7 @@ script = ExtResource( 2 )
 position = Vector2( 3.01469, 7.33371 )
 frames = SubResource( 118 )
 animation = "Stop"
-frame = 6
+frame = 3
 playing = true
 
 [node name="Colision" type="CollisionShape2D" parent="Jugador"]
@@ -1936,7 +1936,7 @@ shape = SubResource( 122 )
 position = Vector2( 2204.24, 319.283 )
 frames = SubResource( 155 )
 animation = "idle"
-frame = 7
+frame = 6
 playing = true
 
 [node name="dinopato2" type="KinematicBody2D" parent="."]
@@ -1949,9 +1949,8 @@ shape = SubResource( 122 )
 position = Vector2( 2143.79, 343.325 )
 frames = SubResource( 155 )
 animation = "hijo"
-frame = 15
+frame = 14
 playing = true
-
 [connection signal="timeout" from="Plataforma/Contador" to="Plataforma" method="_on_Contador"]
 [connection signal="body_entered" from="Moneda/Area" to="Moneda" method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Moneda2/Area" to="Moneda2" method="_on_Area_body_entered"]

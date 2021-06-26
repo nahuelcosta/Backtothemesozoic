@@ -14,9 +14,14 @@ func _process(delta):
 		GV.reset = false
 		GV.cuentahuesos = 0
 	
+	if Input.is_key_pressed(1):
+		GV.cuentahuesos = 3
+	
 	if GV.cuentahuesos == 3:
-		Transicion._change_scene("res://Escenas/Demo.tscn")
-			
+		Transicion._change_sceneP1()
+		FinPuzzle._final_puzzle("res://Escenas/Demo.tscn")
+		Transicion._change_sceneP2()
+		
 	match GV.herramienta:
 		0:
 			GV.texto = 0

@@ -11,5 +11,17 @@ func _change_scene(path : String):
 	yield(anim_play, "animation_finished")
 	layer = -1
 
+func _change_sceneP1():
+	layer = 1
+	anim_play.play("Fade")
+	yield(anim_play, "animation_finished")
+	layer = -1
+
+func _change_sceneP2():
+	layer = 1
+	anim_play.play("Fade")
+	yield(anim_play, "animation_finished")
+	layer = -1
+
 func _ready():
 	layer = -1
